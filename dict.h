@@ -29,6 +29,7 @@ typedef struct dict{
 
 uint32_t ListCount(File *fp);  // 词典里面单词的个数，即是要创建链表的长度
 dict_t CreateList(dict_t head, FILE *fp, uint32_t count); // 创建单链表，返回首节点。分配内存。
+void PrintList(dict_t head); // 打印链表
 void SearchList(dict_t head, uint32_t count); // 查找输入的单词
 void DestroyList(dict_t head); // 释放内存
 void WriteIndexFile(dict_t head, const char *filename, uint32_t count);
