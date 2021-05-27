@@ -1,7 +1,7 @@
 //
 // Created by liuchang01_dxm on 2021/5/25.
 //
-
+#include <stdio.h>
 #include "dict.h"
 
 static const char params[][15] = {"-text", "-index", "-bin", "-test1 -f", "-test2 -f"};
@@ -9,7 +9,7 @@ static const char params[][15] = {"-text", "-index", "-bin", "-test1 -f", "-test
 void Process(int argc, char **argv){
     FILE *fp;
     dict_t head;
-    uint32_t const;
+    uint32_t count;
 
     if ((fp = fopen(TARGET_TEXT_NAME, "r")) == NULL){
         fprintf(stderr, "open file failure!\n");
@@ -24,6 +24,7 @@ void Process(int argc, char **argv){
     if ((strcmp(argv[1], params[0])) == 0){
         head = CreateList(head, fp, count);
         SearchList(head, count);
+        //printf("===========\n");
         fclose(fp);
         DestroyList(head);
     }
@@ -31,7 +32,9 @@ void Process(int argc, char **argv){
     if ((strcmp(argv[1], params[1])) == 0){
         head = CreateList(head, fp, count);
         fclose(fp);
+
         WriteIndexFile(head, TARGET_INDEX_NAME, count);
+
         DestroyList(head);
     }
 

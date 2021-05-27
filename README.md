@@ -33,6 +33,9 @@ Trans:a. 阿比西尼亚的@n. 阿比西尼亚人;依索比亚人
 
 -bin表示使用二进制索引词库进行单词查找。
 
+### 编译安装
+gcc find_word_from_index.c find_word_from_text.c main.c process.c -o app
+
 ### 项目来源：https://blog.csdn.net/wqx521/article/details/50830573
 ![C/C++ 学习路线图](https://www.github.com/o0tigerliu0o/C_dictionary/study.jpg)
 
